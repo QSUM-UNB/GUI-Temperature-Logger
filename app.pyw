@@ -7,7 +7,6 @@ from CustomGuiUtils import OldDataParser
 from DeviceReader import DeviceReader
 from datetime import datetime, timezone
 import threading
-import pyqtgraph as pg
 import sys
 import os
 import matplotlib
