@@ -198,7 +198,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def genButtonPressed(self):
         if not self.curData == None:
             self.analysisMpl.axes.clear()
-            newThread = threading.Thread(None, OldDataParser.psdAndWelch, None, [self, self.curData, int(self.welchCombo.currentText()), self.intervalSpin.value(), self.axisCombo.currentIndex()])
+            newThread = threading.Thread(None, OldDataParser.psdAndWelch, None, [self, self.curData, int(self.welchCombo.currentText()), self.intervalSpin.value() * self.resFactor, self.axisCombo.currentIndex()])
             newThread.start()
         else: # If no data has been loaded
             QtWidgets.QMessageBox.warning(
