@@ -181,6 +181,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.statusBar.showMessage("Please wait for data to finish plotting...")
             return
         self.statusBar.showMessage("Plotting data...")
+        self.resFactor = 1 if self.resolutionCombo.currentIndex() == 0 else 2 if self.resolutionCombo.currentIndex() == 1 else 10
         self.loadThread = threading.Thread(None, self.displayData, None, [])
         self.loadThread.start()
     # Browse for a file in save area
