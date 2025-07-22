@@ -131,8 +131,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def plot(self, date, temp, humid, label):
         if len(date) == 0:
             return
-        (line1, ) = self.tempWidget.axes.plot(date, temp, label=label)
-        (line2, ) = self.humidWidget.axes.plot(date, humid, label=label)
+        (line1, ) = self.tempWidget.axes.plot(date, temp, "o", label=label)
+        (line2, ) = self.humidWidget.axes.plot(date, humid, "o", label=label)
         self.lines[0].append(line1)
         self.lines[1].append(line2)
         self.tempWidget.axes.legend(fancybox=True, shadow=True)
